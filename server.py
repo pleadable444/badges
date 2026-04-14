@@ -116,7 +116,6 @@ def lookup():
         cursor = data.get("nextPageCursor") or ""
         if not cursor:
             break
-        time.sleep(DELAY)
 
     for badge in badges[:60]:
         if not (badge.get("awardingUniverse") or {}).get("name"):
@@ -126,7 +125,6 @@ def lookup():
                     badge["awardingUniverse"] = detail["awardingUniverse"]
             except:
                 pass
-            time.sleep(DELAY)
 
     games_map   = {}
     games_order = []
